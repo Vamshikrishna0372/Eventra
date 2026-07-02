@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 217 33% 17%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 217 33% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 217 33% 17%;
+
+    --primary: 243 75% 59%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 173 80% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 243 75% 59%;
+
+    --radius: 0.75rem;
+
+    --brand-bg: 210 40% 98%;
+    --brand-primary: 243 75% 59%;
+    --brand-secondary: 217 33% 17%;
+    --brand-accent: 173 80% 40%;
+
+    --sidebar-background: 217 33% 17%;
+    --sidebar-foreground: 215 20% 65%;
+    --sidebar-primary: 243 75% 59%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 25% 22%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 215 25% 22%;
+    --sidebar-ring: 243 75% 59%;
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 243 75% 59%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 14%;
+    --muted-foreground: 215 20% 55%;
+
+    --accent: 173 80% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 243 75% 59%;
+
+    --brand-bg: 222 47% 6%;
+    --brand-primary: 243 75% 59%;
+    --brand-secondary: 217 33% 17%;
+    --brand-accent: 173 80% 40%;
+
+    --sidebar-background: 222 47% 5%;
+    --sidebar-foreground: 215 20% 55%;
+    --sidebar-primary: 243 75% 59%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 47% 10%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 47% 10%;
+    --sidebar-ring: 243 75% 59%;
+  }
+
+  /* Accent Color Themes */
+  :root.accent-purple {
+    --primary: 262.1 83.3% 57.8%;
+    --ring: 262.1 83.3% 57.8%;
+  }
+  :root.accent-blue {
+    --primary: 221.2 83.2% 53.3%;
+    --ring: 221.2 83.2% 53.3%;
+  }
+  :root.accent-green {
+    --primary: 142.1 76.2% 36.3%;
+    --ring: 142.1 76.2% 36.3%;
+  }
+  :root.accent-orange {
+    --primary: 24.6 95% 53.1%;
+    --ring: 24.6 95% 53.1%;
+  }
+  :root.accent-rose {
+    --primary: 346.8 77.2% 49.8%;
+    --ring: 346.8 77.2% 49.8%;
+  }
+  :root.accent-cyan {
+    --primary: 188.7 94.5% 42.7%;
+    --ring: 188.7 94.5% 42.7%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+}
+
+@layer components {
+  .shadow-surface {
+    box-shadow: 0 0 0 1px rgba(0,0,0,.05), 0 2px 4px -1px rgba(0,0,0,.06), 0 4px 6px -1px rgba(0,0,0,.04);
+  }
+
+  .shadow-surface-hover {
+    box-shadow: 0 0 0 1px rgba(0,0,0,.08), 0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -2px rgba(0,0,0,.05);
+  }
+
+  .shadow-surface-elevated {
+    box-shadow: 0 0 0 1px rgba(0,0,0,.06), 0 20px 25px -5px rgba(0,0,0,.1), 0 10px 10px -5px rgba(0,0,0,.04);
+  }
+
+  .dark .shadow-surface {
+    box-shadow: 0 0 0 1px rgba(255,255,255,.06), 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 6px -1px rgba(0,0,0,.15);
+  }
+
+  .dark .shadow-surface-hover {
+    box-shadow: 0 0 0 1px rgba(255,255,255,.1), 0 10px 15px -3px rgba(0,0,0,.3), 0 4px 6px -2px rgba(0,0,0,.2);
+  }
+
+  .dark .shadow-surface-elevated {
+    box-shadow: 0 0 0 1px rgba(255,255,255,.08), 0 20px 25px -5px rgba(0,0,0,.35), 0 10px 10px -5px rgba(0,0,0,.25);
+  }
+
+  .glass {
+    @apply bg-background/80 backdrop-blur-xl border-b border-border;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+  .hover-lift:hover {
+    transform: translateY(-2px);
+  }
+
+  .skeleton {
+    @apply bg-muted animate-pulse rounded-lg;
+  }
+}
